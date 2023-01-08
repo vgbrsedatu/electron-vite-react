@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
+    <link href="./assets/styles/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root-wrapper">
+      <header id="header-wrapper">
+        <nav>
+					<ul class="title-bar">
+						<div class="title-bar__app-name">
+							<span>&#xE700;</span>
+        			<p id="app-name">Application</p>
+						</div>
+						<div class="title-bar__menu">
+							<button id="window-minimize" type="button" title="minimize" class="title-bar__button">
+								&#xE921;
+							</button>
+							<button id="window-close" type="button" title="close" class="title-bar__button title-bar__button--close">
+								&#xE8BB;
+							</button>
+						</div>
+					</ul>
+          <ul class="version">
+            <li class="version__item">Electron <span id="electron-version"></span></li>
+            <li class="version__item">Chromium <span id="chrome-version"></span></li>
+            <li class="version__item">Node <span id="node-version"></span></li>
+            <li class="version__item">V8 <span id="v8-version"></span></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="main-wrapper">
+        <figure class="logo">
+          <img src='./assets/images/svg/react.svg' class="logo__img" alt="Electron logo"/>
+        </figure>
+        <header class="title-app">
+          <h2 class="title-app__presentation">AN APPLICATION WITH ELECTRON</h2>
+          <h4 id="app-description" class="title-app__description"></h4>
+        </header>
+        <section class="features">
+          <article class="feature">
+            <h3 class="feature__title">Change window opacity</h3>
+            <div class="feature__detail">
+              <p>Current <span id="current-opacity">100</span></p>
+              <input type="range" id="opacity" name="opacity" min="70" max="100" value="100" step="1">
+            </div>
+          </article>
+          <article class="feature">
+            <h3 class="feature__title">Toogle scheme color</h3>
+            <div class="feature__detail">
+              <p>Current <span id="current-scheme">Dark</span></p>
+              <button type="button" class="btn btn--primary" id="scheme">Toogle</button>
+            </div>
+          </article>
+          <article class="feature">
+            <h3 class="feature__title">Notifications</h3>
+            <div class="feature__detail">
+              <p>Click to create a <span>notification</span></p>
+              <button type="button" class="btn btn--primary" id="notification">Notification</button>
+            </div>
+          </article>
+          <article class="feature">
+            <h3 class="feature__title">Native system dialogs</h3>
+            <div class="feature__detail">
+              <p>Selection <span id="user-selection"></span></p>
+              <button type="button" class="btn btn--primary" id="dialog">Box Dialog</button>
+            </div>
+          </article>
+        </section>
+      </main>
+      <footer id="footer-wrapper">
+        <ul class="footer">
+          <li class="footer__item">Developed By: <span id="app-autor"></span></li>
+          <li class="footer__item">Version: <span id="app-version"></span></li>
+          <li class="footer__item">Company: <span id="app-company"></span></li>
+          <li class="footer__item"><span id="app-copyright"></span></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./assets/scripts/renderer.js"></script>
+  </body>
+</html>
