@@ -3,7 +3,7 @@
  * @file Manages electron native system dialogs for opening and saving files,
  * alerting, all methods it's async.
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT ELECTRON APIS
 const { dialog } = require('electron');
 
