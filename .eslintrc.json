@@ -28,7 +28,7 @@
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": [ "error", {
       "devDependencies": [
-        "src/main.jsx",
+        "**/*.jsx",
         "configurations/forge/makers/*.js",
         "configurations/forge/publisher/*.js",
         "tools/**/*.js",
