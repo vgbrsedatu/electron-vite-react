@@ -43,14 +43,15 @@
   "license": "MIT",
   "main": "distribution/electron/main/index.js",
   "scripts": {
+    "prepare": "husky install",
     "start": "electron-forge start",
-    "dev": "cross-env NODE_ENV=development electron-forge start",
+    "dev": "cross-env NODE_ENV=development vite",
+    "build": "vite build",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "npx eslint . --format=pretty --ext .js,.jsx",
-    "test": "cross-env NODE_ENV=test node test/index.js",
-    "prepare": "husky install"
+    "test": "cross-env NODE_ENV=test node test/index.js"
   },
   "dependencies": {
     "electron-log": "^4.4.8",
