@@ -48,4 +48,4 @@ logger.transports.console.format = FORMATS.console;
 logger.transports.file.format = FORMATS.file;
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export { logger }; // eslint-disable-line import/prefer-default-export
+export default logger;
