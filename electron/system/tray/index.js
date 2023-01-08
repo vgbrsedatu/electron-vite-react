@@ -46,4 +46,4 @@ const tray = ({ icon, name, menu }) => {
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export { tray }; // eslint-disable-line import/prefer-default-export
+export default tray; // eslint-disable-line import/prefer-default-export

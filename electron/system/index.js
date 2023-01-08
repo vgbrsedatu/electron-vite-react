@@ -7,8 +7,8 @@
 import * as dialog from './dialog';
 import * as file from './file';
 import * as menu from './menu';
-import * as notification from './notification';
-import * as tray from './tray';
+import notification from './notification';
+import tray from './tray';
 
 // ━━ EXPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export { dialog };
