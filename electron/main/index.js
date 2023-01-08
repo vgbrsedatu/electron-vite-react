@@ -60,13 +60,6 @@ const WINDOW_URL = ON_DEVELOPMENT
     });
 
 // ━━ FOR DEVELOPMENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-if (ON_DEVELOPMENT) {
-  // » Enable live reload for Electron too
-  const ELECTRON_PATH = path.resolve(__dirname, '..', '..', 'node_modules/electron');
-  require('electron-reload')(__dirname, { electron: require(ELECTRON_PATH) }); // eslint-disable-line global-require
-  process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
-}
-
 // ━━ FUNCTIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The`createWindow()` function create and control browser windows.
@@ -110,7 +103,7 @@ const createWindow = () => {
   });
 
   // » Load the index.html of the app.
-  window.loadFile(WINDOW_URL);
+  window.loadURL(WINDOW_URL);
 
   // » Emitted when the web page has been rendered (while not being shown)
   // » and window can be displayed without a visual flash.
