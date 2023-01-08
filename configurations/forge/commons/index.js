@@ -2,7 +2,8 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manage common configuration settings for the `electron-forge` module.
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
 const url = require('url');
 const path = require('path');

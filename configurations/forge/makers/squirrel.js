@@ -2,7 +2,8 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manage configuration for the maker squirrel.
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT MODULES
 const commons = require('../commons');
 

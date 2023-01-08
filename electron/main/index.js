@@ -2,7 +2,7 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manages the configuration main proccess app.
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
 import path from 'path';
 import url from 'url';
@@ -219,7 +219,7 @@ const SHOULD_CHECK = app.isPackaged && COMMAND !== '--squirrel-firstrun';
  */
 const github = {
   owner: 'vgbrsedatu',
-  name: 'electron-app',
+  name: 'electron-vite-react',
 };
 
 /**

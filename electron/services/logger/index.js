@@ -2,7 +2,8 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manages the logger service for electron app.
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT THIRD PARTIES MODULES
 import logger from 'electron-log';
 

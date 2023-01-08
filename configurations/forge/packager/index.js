@@ -2,7 +2,8 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manage settings for the property `rebuild` on `electron-forge`
  */
-// ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT MODULES
 const commons = require('../commons');
 
