@@ -1,10 +1,13 @@
 {
   "extends": [
-    "airbnb-base",
+    "airbnb",
     "prettier"
   ],
   "plugins": [
-    "prettier"
+    "react",
+    "prettier",
+    "react-hooks",
+    "jsx-a11y"
   ],
   "overrides": [],
   "parser": "",
@@ -25,6 +28,7 @@
     "import/no-dynamic-require": 0,
     "import/no-extraneous-dependencies": [ "error", {
       "devDependencies": [
+        "src/main.jsx",
         "configurations/forge/makers/*.js",
         "configurations/forge/publisher/*.js",
         "tools/**/*.js",
@@ -32,7 +36,8 @@
         "electron/main/index.js",
         "electron/preload/index.js",
         "electron/system/**/*.js",
-        "forge.config.js"
+        "forge.config.js",
+        "vite.config.js"
       ]}
     ],
     // » PRETTIER
@@ -40,6 +45,14 @@
       "singleQuote": true,
       "printWidth": 100,
       "trailingComma": "all"
-    }]
+    }],
+    // » REACT
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [0, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": [0, { "html": "enforce", "custom": "ignore", "exceptions": ["img"] }],
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
+    // » REACT HOOKS
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
