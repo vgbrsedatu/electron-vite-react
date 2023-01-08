@@ -62,4 +62,4 @@ const startup = app => {
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.startup = startup;
+export { startup }; // eslint-disable-line import/prefer-default-export

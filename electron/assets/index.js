@@ -5,7 +5,7 @@
 
 // ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
-const path = require('path');
+import path from 'path';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -120,4 +120,4 @@ const icons = {
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.icons = icons;
+export { icons }; // eslint-disable-line import/prefer-default-export

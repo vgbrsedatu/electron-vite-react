@@ -60,4 +60,4 @@ const createOptions = ({ github, version }) => {
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.createOptions = createOptions;
+export { createOptions }; // eslint-disable-line import/prefer-default-export

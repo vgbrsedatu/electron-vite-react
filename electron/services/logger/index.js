@@ -4,7 +4,7 @@
  */
 // ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT THIRD PARTIES MODULES
-const logger = require('electron-log');
+import logger from 'electron-log';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -48,4 +48,4 @@ logger.transports.console.format = FORMATS.console;
 logger.transports.file.format = FORMATS.file;
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-module.exports = logger;
+export { logger }; // eslint-disable-line import/prefer-default-export
