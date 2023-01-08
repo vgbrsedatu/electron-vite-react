@@ -4,6 +4,10 @@
  * synchronous and asynchronous.
  */
 
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+import * as async from './async';
+import * as sync from './sync';
+
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.async = require('./async');
-exports.sync = require('./sync');
+export { async };
+export { sync };

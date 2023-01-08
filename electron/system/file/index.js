@@ -4,7 +4,7 @@
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
-const fs = require('fs');
+import fs from 'fs';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -323,16 +323,16 @@ const copyFileSync = (source, destination) => fs.copyFileSync(source, destinatio
 const deleteFileSync = path => fs.unlinkSync(path);
 
 // ━━ EXPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.existsPath = existsPath;
-exports.isFile = isFile;
-exports.isDirectory = isDirectory;
-exports.readDirectory = readDirectory;
-exports.mkdir = mkdir;
-exports.rmdir = rmdir;
-exports.resolvedPath = resolvedPath;
-exports.writeFileSync = writeFileSync;
-exports.writeFileAsync = writeFileAsync;
-exports.readFileSync = readFileSync;
-exports.readFileAsync = readFileAsync;
-exports.copyFileSync = copyFileSync;
-exports.deleteFileSync = deleteFileSync;
+export { existsPath };
+export { isFile };
+export { isDirectory };
+export { readDirectory };
+export { mkdir };
+export { rmdir };
+export { resolvedPath };
+export { writeFileSync };
+export { writeFileAsync };
+export { readFileSync };
+export { readFileAsync };
+export { copyFileSync };
+export { deleteFileSync };

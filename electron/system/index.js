@@ -3,9 +3,16 @@
  * @file Main file to export all electron system to main proccess.
  */
 
+// ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+import * as dialog from './dialog';
+import * as file from './file';
+import * as menu from './menu';
+import * as notification from './notification';
+import * as tray from './tray';
+
 // ━━ EXPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.dialog = require('./dialog');
-exports.file = require('./file');
-exports.menu = require('./menu');
-exports.notification = require('./notification');
-exports.tray = require('./tray');
+export { dialog };
+export { file };
+export { menu };
+export { notification };
+export { tray };

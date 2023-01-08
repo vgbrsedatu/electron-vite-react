@@ -5,7 +5,7 @@
  */
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT ELECTRON APIS
-const { dialog } = require('electron');
+import { dialog } from 'electron';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -220,7 +220,7 @@ const save = (window, options) => dialog.showSaveDialogSync(window, options);
 const error = ({ title, content }) => dialog.showErrorBox(title, content);
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-exports.message = message;
-exports.open = open;
-exports.save = save;
-exports.error = error;
+export { message };
+export { open };
+export { save };
+export { error };
