@@ -2,6 +2,7 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manages the configuration main proccess app.
  */
+
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
 import path from 'path';

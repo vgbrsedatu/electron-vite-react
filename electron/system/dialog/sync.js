@@ -3,6 +3,7 @@
  * @file Manages electron native system dialogs for opening and saving files,
  * alerting, all methods it's sync.
  */
+
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT ELECTRON APIS
 import { dialog } from 'electron';
