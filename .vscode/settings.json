@@ -57,5 +57,7 @@
       "other": "inline",
     },
     "editor.snippetSuggestions": "inline"
-  }
+  },
+  "commentTranslate.targetLanguage": "en",
+  "commentTranslate.multiLineMerge": true,
 }
