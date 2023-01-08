@@ -234,7 +234,7 @@ h6 {
 /**
  * ID STYLES
  */
-#root-wrapper {
+#root {
   display: flex;
   flex: 1 1 100%;
   flex-flow: column nowrap;
