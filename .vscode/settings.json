@@ -11,10 +11,10 @@
     "node_modules": true,
     /**/
     ".editorconfig": true,
-    ".eslintrc": true,
-    ".eslintrc.json": true,
+    // ".eslintrc": true,
+    // ".eslintrc.json": true,
     ".eslintignore": true,
-    // ".gitignore": true,
+    ".gitignore": true,
     ".gitattributes": true,
     ".huskyrc": true,
     ".lintstagedrc": true,
@@ -49,13 +49,13 @@
   },
   "[markdown]": {
     "editor.renderWhitespace": "all",
-    "editor.acceptSuggestionOnEnter": "on",
+    "editor.acceptSuggestionOnEnter": "smart",
     "editor.parameterHints.enabled": true,
     "editor.quickSuggestions": {
-      "comments": "on",
-      "strings": "on",
-      "other": "on"
+      "comments": "inline",
+      "strings": "inline",
+      "other": "inline",
     },
-    "editor.snippetSuggestions": "top"
+    "editor.snippetSuggestions": "inline"
   }
 }
