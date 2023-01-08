@@ -4,22 +4,23 @@
  */
 // ━━ IMPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT NATIVE NODE MODULES
-const path = require('path');
-const os = require('os');
+import path from 'path';
+import url from 'url';
+import os from 'os';
 
 // » IMPORT THIRD PARTIES MODULES
 
 // » IMPORT ELECTRON APIS
-const { app, BrowserWindow, ipcMain, nativeTheme, autoUpdater } = require('electron');
+import { app, BrowserWindow, ipcMain, nativeTheme, autoUpdater } from 'electron';
 
 // » IMPORT ASSETS
-const assets = require('../assets');
+import * as assets from '../assets';
 
 // » IMPORT SYSTEM
-const system = require('../system');
+import * as system from '../system';
 
 // » IMPORT SYSTEM
-const services = require('../services');
+import * as services from '../services';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -50,7 +51,13 @@ const { icons } = assets;
  * @constant {string} mainWindowUrl
  * @private
  */
-const WINDOW_URL = path.join(__dirname, '..', '..', 'src', 'index.html');
+const WINDOW_URL = ON_DEVELOPMENT
+  ? process.env.VITE_DEV_SERVER_URL
+  : url.format({
+      pathname: path.join(__dirname, '..', '..', 'renderer', 'index.html'),
+      protocol: 'file:',
+      slashes: true,
+    });
 
 // ━━ FOR DEVELOPMENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 if (ON_DEVELOPMENT) {
