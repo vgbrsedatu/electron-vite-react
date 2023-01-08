@@ -11,8 +11,8 @@
     "node_modules": true,
     /**/
     ".editorconfig": true,
-    // ".eslintrc": true,
-    // ".eslintrc.json": true,
+    ".eslintrc": true,
+    ".eslintrc.json": true,
     ".eslintignore": true,
     ".gitignore": true,
     ".gitattributes": true,
