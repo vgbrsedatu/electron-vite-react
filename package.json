@@ -1,0 +1,87 @@
+{
+  "name": "electron-vite-react",
+  "version": "0.1.0",
+  "description": "A minimal starter template for electron application with vite and react",
+  "productName": "Electron Vite",
+  "keywords": [
+    "electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo",
+    "app",
+    "boilerplate",
+    "build",
+    "development",
+    "javascript",
+    "testing"
+  ],
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "homepage": "https://github.com/vgbrsedatu/electron-vite-react#readme",
+  "bugs": {
+    "url": "https://github.com/vgbrsedatu/electron-vite-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vgbrsedatu/electron-vite-react.git"
+  },
+  "author": {
+    "name": "Victor Giovanni Beltrán Rodríguez",
+    "email": "vgbr.sedatu@gmail.com",
+    "url": "https://github.com/vgbrsedatu"
+  },
+  "contributors": [
+    {
+      "name": "Victor Giovanni Beltrán Rodríguez",
+      "email": "vgbr.sedatu@gmail.com",
+      "url": "https://github.com/vgbrsedatu"
+    }
+  ],
+  "license": "MIT",
+  "main": "electron/main/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "dev": "cross-env NODE_ENV=development electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "npx eslint . --format=pretty --ext .js,.jsx",
+    "test": "cross-env NODE_ENV=test node test/index.js",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "electron-log": "^4.4.8"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/core": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-wix": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
+    "@electron-forge/publisher-github": "^6.0.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "electron": "^22.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-wix-msi": "^5.0.0",
+    "eslint": "^8.30.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-formatter-pretty": "^4.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1",
+    "stylelint": "^14.16.1",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-standard": "^29.0.0"
+  }
+}
