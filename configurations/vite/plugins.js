@@ -29,7 +29,7 @@ const viteStaticCopy = {
  * @private
  * @param   {string} params - File Reference.
  * @returns {void}
- * @example const plugins = [ customStart(plugins.customStart)];
+ * @example const plugins = [customStart(plugins.customStart)];
  *
  */
 const customStart = debounce(params => {
