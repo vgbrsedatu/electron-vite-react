@@ -1,6 +1,6 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Contains `useWindowState` a custom Reack Hook.
+ * @file Contains `useWindowState` a custom React Hook.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -18,7 +18,8 @@ import { useEffect, useState } from 'react';
  * @property {function():void} minimizeWindow - A function that sends a signal to ipcMain to minimize the window.
  * @property {function():void} maximizeWindow - A function that sends a signal to ipcMain to maximize the window.
  */
-// ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `useWindowState` it's a custom React hook witch communicates with the
  * `electron` api, used to manage window states.
