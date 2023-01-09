@@ -11,11 +11,11 @@ import { useEffect, useState } from 'react';
 /**
  * The returns value from `useAbout`
  *
- * @typedef   {Object}  useVersions
- * @property  {string}  chrome      - The `chrome` version.
- * @property  {string}  node        - The `node` version.
- * @property  {string}  electron    - The `electron` version.
- * @property  {string}  v8          - The `v8` version.
+ * @typedef   {Object}  VersionsResponse
+ * @property  {string}  chrome           - The `chrome` version.
+ * @property  {string}  node             - The `node` version.
+ * @property  {string}  electron         - The `electron` version.
+ * @property  {string}  v8               - The `v8` version.
  */
 
 // ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
