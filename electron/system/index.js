@@ -10,7 +10,7 @@ import * as menu from './menu';
 import notification from './notification';
 import tray from './tray';
 
-// ━━ EXPORT PACKAGES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export { dialog };
 export { file };
 export { menu };
