@@ -369,21 +369,6 @@ ipcMain.on('window-close', event => {
 });
 
 /**
- * Listen to `theme-mode:toggle` channel.
- *
- * @type {ipcMain} - Electron API
- * @listens ipcMain#theme-mode:toggle
- */
-ipcMain.handle('theme-mode:toggle', () => {
-  if (nativeTheme.shouldUseDarkColors) {
-    nativeTheme.themeSource = 'light';
-  } else {
-    nativeTheme.themeSource = 'dark';
-  }
-  return nativeTheme.shouldUseDarkColors;
-});
-
-/**
  * Listen to `notification` channel.
  *
  * @type {ipcMain} - Electron API
@@ -411,4 +396,49 @@ ipcMain.handle('dialog:message', (event, payload) => {
     icon: icons[payload.icon] || icons.app,
   });
   return selection;
+});
+
+/**
+ * Listen to `theme:current` channel.
+ *
+ * @type {ipcMain} - Electron API
+ * @listens ipcMain#theme:current
+ */
+ipcMain.on('theme:current', event => {
+  const source = nativeTheme.themeSource;
+  const shouldUseDark = nativeTheme.shouldUseDarkColors;
+  const current = services.theme.getCurrent({ source, shouldUseDark });
+  event.reply('theme:current.reply', current);
+});
+
+/**
+ * Listen to `theme-mode:toggle` channel.
+ *
+ * @type {ipcMain} - Electron API
+ * @listens ipcMain#theme-mode:toggle
+ */
+ipcMain.on('theme:toggle', (event, theme) => {
+  const onDark = theme === 'dark';
+  if (onDark) {
+    nativeTheme.themeSource = 'light';
+    event.reply('theme:toggle.reply', 'light');
+  } else {
+    nativeTheme.themeSource = 'dark';
+    event.reply('theme:toggle.reply', 'dark');
+  }
+});
+
+/**
+ * Listen to `theme-mode:toggle` channel.
+ *
+ * @type {ipcMain} - Electron API
+ * @listens ipcMain#theme-mode:toggle
+ */
+ipcMain.on('theme:choose', (event, choose) => {
+  const sources = ['system', 'light', 'dark'];
+  const theme = sources.includes(choose) ? choose : 'system';
+  nativeTheme.themeSource = theme;
+  const shouldUseDark = nativeTheme.shouldUseDarkColors;
+  const current = services.theme.getCurrent({ theme, shouldUseDark });
+  event.reply('theme:toggle.reply', current);
 });
