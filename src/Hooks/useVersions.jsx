@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 /**
  * The returns value from `useAbout`
  *
- * @typedef   {Object}  VersionsResponse
+ * @typedef   {object}  VersionsResponse
  * @property  {string}  chrome           - The `chrome` version.
  * @property  {string}  node             - The `node` version.
  * @property  {string}  electron         - The `electron` version.

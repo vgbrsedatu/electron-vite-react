@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 /**
  * The returns value from `useAbout`
  *
- * @typedef   {Object}  AboutResponse
+ * @typedef   {object}  AboutResponse
  * @property  {string}  name          - Application name.
  * @property  {string}  description   - Application description.
  * @property  {string}  team          - The team that developed the application.
