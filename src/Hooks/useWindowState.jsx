@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
  */
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `useWindowState` it´s a custom React hook witch communicates with the
+ * The `useWindowState` it's a custom React hook witch communicates with the
  * `electron` api, used to manage window states.
  *
  * @returns {WindowStateResponse}
