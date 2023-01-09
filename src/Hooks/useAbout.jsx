@@ -1,6 +1,6 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Contains `useWindowState` a custom Reack Hook.
+ * @file Contains `useAbout` a custom Reack Hook.
  */
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT REACT MODULES
