@@ -408,6 +408,10 @@ h6 {
   color: var(--color-primary);
 }
 
+.title-app__description {
+  margin: 10px 0;
+}
+
 .features {
   display: grid;
   max-height: 300px;
