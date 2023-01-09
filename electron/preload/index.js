@@ -11,16 +11,28 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const app = {
+/**
+ * The `versions` constant, contains information about the application, such as
+ * developers or description.
+ *
+ * @constant {object} versions
+ */
+const about = {
   name: 'Electron app',
   description: 'Starter template for electron project',
   team: 'BRSoft Electron',
   company: 'BRSoft',
-  copyright: 'Copyright © 2014-2020',
+  copyright: 'BRSoft© 2014-2020',
   version: '1.0.0',
-  autor: 'Victor G. Beltrán Rodríguez',
+  author: 'Victor G. Beltrán Rodríguez',
 };
 
+/**
+ * The `versions` constant, contains information about the versions of the
+ * application.
+ *
+ * @constant {object} versions
+ */
 const versions = {
   chrome: process.versions.chrome,
   node: process.versions.node,
@@ -28,10 +40,37 @@ const versions = {
   v8: process.versions.v8,
 };
 
-// » CREATE CONTEXT BRIDGE
-contextBridge.exposeInMainWorld('appRuntime', {
+/**
+ * The `apiKey` constant, it's the key to inject the API onto `window` with. The
+ * API will be accessible on `window[apiKey]`.
+ *
+ * @constant {string} apiKey
+ */
+const apiKey = 'appRuntime';
+
+/**
+ * The api provided to exposeInMainWorld must be a Function, string, number,
+ * Array, boolean, or an object whose keys are strings and values are a
+ * Function, string, number, Array, boolean, or another nested object that meets
+ * the same conditions.
+ *
+ * @constant {object} api
+ */
+const api = {
+  about,
   versions,
-  app,
   send: (channel, payload) => ipcRenderer.send(channel, payload),
-  invoke: (channel, payload) => ipcRenderer.invoke(channel, payload),
-});
+  invoke: (channel, listener) => ipcRenderer.invoke(channel, listener),
+  subscribe: (channel, listener) => ipcRenderer.on(channel, listener),
+  subscribeOnce: (channel, listener) => ipcRenderer.once(channel, listener),
+  once: (channel, listener) => {
+    const subscription = (event, ...args) => listener(...args);
+    ipcRenderer.on(channel, subscription);
+    return () => {
+      ipcRenderer.removeListener(channel, subscription);
+    };
+  },
+};
+
+// ━━ CONTEXTBRIDGE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+contextBridge.exposeInMainWorld(apiKey, api);
