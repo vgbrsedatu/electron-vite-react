@@ -104,6 +104,7 @@ const ICON_ERROR = path.join.apply(null, PATH_ICONS.ERROR);
  */
 const ICON_WARNING = path.join.apply(null, PATH_ICONS.WARNING);
 
+// ━━ MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * A collection of icon file path reference, for different application uses.
  *
