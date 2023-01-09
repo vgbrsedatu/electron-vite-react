@@ -7,8 +7,10 @@
 import logger from './logger';
 import * as squirrel from './squirrel';
 import * as update from './update';
+import * as theme from './theme';
 
 // ━━ EXPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export { logger };
 export { squirrel };
 export { update };
+export { theme };
