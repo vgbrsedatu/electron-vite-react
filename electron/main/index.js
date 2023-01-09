@@ -198,20 +198,12 @@ app.on('ready', () => {
 
 // ━━ SET AUTOUPDATER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `COMMAND` is used to check if some command-line corresponds to default
- * `Squirrel.Windows` event.
- *
- * @constant {bolean} COMMAND
- */
-const COMMAND = process.argv[1];
-
-/**
  * The `SHOULD_CHECK` is used to check if `autoUpdater.checkForUpdates()` should
  * be executed.
  *
  * @constant {bolean} SHOULD_CHECK
  */
-const SHOULD_CHECK = app.isPackaged && COMMAND !== '--squirrel-firstrun';
+const SHOULD_CHECK = app.isPackaged && services.squirrel.onSquirrel;
 
 /**
  * A `Object` with Github repository information.
@@ -243,7 +235,6 @@ autoUpdater.setFeedURL(FeedURLOptions);
 // » Prevent asks the server if there is an update if the application is not
 // » packaged or some `Squirrel.Windows` is executed.
 if (SHOULD_CHECK) {
-  services.logger.info('SHOULD CHECK');
   autoUpdater.checkForUpdates();
 }
 
