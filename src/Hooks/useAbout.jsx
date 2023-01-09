@@ -2,6 +2,7 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Contains `useAbout` a custom Reack Hook.
  */
+
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT REACT MODULES
 import { useEffect, useState } from 'react';
