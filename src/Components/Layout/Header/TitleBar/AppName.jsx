@@ -15,7 +15,7 @@ import useAbout from '../../../../Hooks/useAbout';
  * @returns {JSX.Element} The `AppName` components.
  */
 const AppName = () => {
-  const { about } = useAbout();
+  const about = useAbout();
   return (
     <div className="title-bar__app-name">
       <span>&#xE700;</span>
