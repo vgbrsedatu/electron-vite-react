@@ -15,7 +15,7 @@ import useVersions from '../../../../Hooks/useVersions';
  * @returns {JSX.Element} The `Versions` components.
  */
 const Versions = () => {
-  const { versions } = useVersions();
+  const versions = useVersions();
   return (
     <ul className="version">
       <li className="version__item">
