@@ -62,7 +62,9 @@ const api = {
   send: (channel, payload) => ipcRenderer.send(channel, payload),
   invoke: (channel, listener) => ipcRenderer.invoke(channel, listener),
   subscribe: (channel, listener) => ipcRenderer.on(channel, listener),
+  unsubscribe: (channel, listener) => ipcRenderer.removeListener(channel, listener),
   subscribeOnce: (channel, listener) => ipcRenderer.once(channel, listener),
+  removeAll: channel => ipcRenderer.removeAllListeners(channel),
   once: (channel, listener) => {
     const subscription = (event, ...args) => listener(...args);
     ipcRenderer.on(channel, subscription);
