@@ -15,7 +15,8 @@ import { useState } from 'react';
  * @property  {string}      choice         - The value chosen by the user.
  * @property  {() => void}  dialog         - A function to open a modal window.
  */
-// ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+// ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * An object with options for user and configuration of `invoke`
  *
