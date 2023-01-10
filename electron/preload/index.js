@@ -60,6 +60,7 @@ const api = {
   about,
   versions,
   send: (channel, payload) => ipcRenderer.send(channel, payload),
+  sendSync: (channel, payload) => ipcRenderer.sendSync(channel, payload),
   invoke: (channel, listener) => ipcRenderer.invoke(channel, listener),
   subscribe: (channel, listener) => ipcRenderer.on(channel, listener),
   unsubscribe: (channel, listener) => ipcRenderer.removeListener(channel, listener),
