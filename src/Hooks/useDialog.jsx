@@ -40,9 +40,9 @@ const options = {
 // ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `useDialog` it's a custom React hook witch communicates with the
- * `electron` api, used to manages versions state.
+ * `electron` api.
  *
- * @returns {DialogResponse} Information about the versions application.
+ * @returns {DialogResponse} An object to interact with a modal window.
  */
 const useDialog = () => {
   const [choice, setChoice] = useState('');
