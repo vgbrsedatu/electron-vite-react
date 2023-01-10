@@ -26,13 +26,13 @@ import { useEffect, useState } from 'react';
  * @returns {VersionsResponse} Information about the versions application.
  */
 const useVersions = () => {
-  const [versions, setVersions] = useState(null);
+  const [versions, setVersions] = useState({});
 
   useEffect(() => {
     setVersions(window.appRuntime.versions);
   }, []);
 
-  return { versions };
+  return versions;
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
