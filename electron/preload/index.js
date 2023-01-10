@@ -12,10 +12,10 @@ import { contextBridge, ipcRenderer } from 'electron';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `versions` constant, contains information about the application, such as
+ * The `about` constant, contains information about the application, such as
  * developers or description.
  *
- * @constant {object} versions
+ * @constant {object} about
  */
 const about = {
   name: 'Electron app',
