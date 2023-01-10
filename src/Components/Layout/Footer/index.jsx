@@ -15,7 +15,7 @@ import useAbout from '../../../Hooks/useAbout';
  * @returns {JSX.Element} The `Footer` components.
  */
 const Footer = () => {
-  const { about } = useAbout();
+  const about = useAbout();
   return (
     <footer id="footer-wrapper">
       <ul className="footer">
