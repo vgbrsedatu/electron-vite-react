@@ -29,13 +29,13 @@ import { useEffect, useState } from 'react';
  * @returns {AboutResponse} Information about the application.
  */
 const useAbout = () => {
-  const [about, setAbout] = useState(null);
+  const [about, setAbout] = useState({});
 
   useEffect(() => {
     setAbout(window.appRuntime.about);
   }, []);
 
-  return { about };
+  return about;
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
