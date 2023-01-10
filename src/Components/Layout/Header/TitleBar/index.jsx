@@ -10,7 +10,7 @@ import MinimizeButton from './MinimizeButton';
 import CloseButton from './CloseButton';
 
 // » IMPORT CUSTOM HOOKS
-import useWindowState from '../../../../Hooks/useWindowState';
+import useWindow from '../../../../Hooks/useWindow';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -20,7 +20,7 @@ import useWindowState from '../../../../Hooks/useWindowState';
  * @returns {JSX.Element} The `TitleBar` components.
  */
 const TitleBar = () => {
-  const { minimizeWindow, closeWindow } = useWindowState();
+  const { minimizeWindow, closeWindow } = useWindow();
   return (
     <div className="title-bar">
       <AppName />
