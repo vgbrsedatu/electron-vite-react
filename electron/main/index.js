@@ -407,7 +407,7 @@ ipcMain.handle('dialog:message', (event, payload) => {
 ipcMain.on('theme:current', event => {
   const source = nativeTheme.themeSource;
   const shouldUseDark = nativeTheme.shouldUseDarkColors;
-  const current = services.theme.getCurrent({ source, shouldUseDark });
+  const current = services.theme.getCurrent(source, shouldUseDark);
   event.reply('theme:current.reply', current);
 });
 
