@@ -18,7 +18,7 @@ import { useState } from 'react';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * An object with options for user and configuration of `invoke`
+ * An object with options for `user` and configuration of `invoke`
  *
  * @constant {object}
  */
