@@ -22,7 +22,7 @@ const Opacity = () => {
       <h3 className="feature__title">Change window opacity</h3>
       <div className="feature__detail">
         <p>
-          Current <span id="current-opacity">{percent} %</span>
+          Current <span id="current-opacity">{percent}%</span>
         </p>
         <input
           type="range"
