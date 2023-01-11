@@ -144,9 +144,7 @@
   }
 }
 
-/**
-  * RESET CSS
-  */
+/* ━━ RESET CSS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 *,
 *::before,
 *::after {
@@ -182,18 +180,15 @@ table {
   border-spacing: 0;
 }
 
-/**
-* GENERAL
-*/
+/* ━━ HTML ELEMENTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 body {
   display: flex;
-  height: 100vh;
-  flex-flow: column;
   border-radius: 15px;
   background-color: var(--color-background);
   color: var(--color-on-background);
   font-family: var(--font-segoe-ui);
   font-size: 16px;
+  line-height: 1.5rem;
   transition: 0.3s ease all;
 }
 
@@ -231,14 +226,23 @@ h6 {
   font-weight: 400;
 }
 
-/**
- * ID STYLES
- */
+/* ━━ ID STYLES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #root {
   display: flex;
+  height: 100vh;
   flex: 1 1 100%;
   flex-flow: column nowrap;
   gap: 10px;
+}
+
+#titlebar {
+  flex: 0 1 auto;
+}
+
+#container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
 }
 
 #header-wrapper {
@@ -261,9 +265,7 @@ h6 {
   font-weight: 300;
 }
 
-/**
- * CLASS STYLES
- */
+/* ━━ CLASS STYLES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .material-icons {
   display: inline-block;
   direction: ltr;
@@ -279,7 +281,7 @@ h6 {
   word-wrap: normal;
 }
 
-.title-bar {
+.titlebar {
   display: flex;
   flex: 0 1 auto;
   flex-flow: row nowrap;
@@ -291,14 +293,18 @@ h6 {
   user-select: none;
 }
 
-.title-bar__app-name {
+.titlebar.titlebar--nodrag {
+  -webkit-app-region: no-drag;
+}
+
+.titlebar__app-name {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   gap: 10px;
 }
 
-.title-bar__app-name > span {
+.titlebar__app-name > span {
   display: flex;
   width: 46px;
   height: 32px;
@@ -311,13 +317,13 @@ h6 {
   font-size: 16px;
 }
 
-.title-bar__menu {
+.titlebar__windows-control {
   display: flex;
   flex-flow: row nowrap;
   gap: 2px;
 }
 
-.title-bar__button {
+.titlebar__button {
   display: flex;
   width: 46px;
   height: 32px;
@@ -332,14 +338,40 @@ h6 {
   cursor: pointer;
   font-family: var(--font-segoe-mdl2);
   font-size: 16px;
+  user-select: none;
 }
 
-.title-bar__button:hover {
+.titlebar__button:hover {
   background-color: #3C3D3A;
 }
 
-.title-bar__button--close:hover {
+.titlebar__button--close:hover {
   background-color: #DD2E2E;
+}
+
+.modal {
+  position: absolute;
+  top: calc(50%);
+  left: calc(50%);
+  display: flex;
+  width: 300px;
+  height: 200px;
+  flex-flow: column;
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
+}
+
+.modal_container {
+  flex: 1 1 auto;
+  padding: 5px;
+}
+
+.surface {
+  padding: 15px;
+  border-radius: 15px;
+  margin: 20px;
+  background-color: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
 }
 
 .version {
