@@ -4,12 +4,10 @@
  */
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT COMPONENTS
-import React from 'react';
-
-// » IMPORT COMPONENTS
-import Footer from './Footer';
-import Header from './Header';
-import Main from './Main';
+import Dialog from './Dialog';
+import Notification from './Notification';
+import Opacity from './Opacity';
+import ToogleTheme from './ToogleTheme';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -19,11 +17,12 @@ import Main from './Main';
  * @returns {JSX.Element} The `Home` components.
  */
 const Home = () => (
-  <main id="container">
-    <Header />
-    <Main />
-    <Footer />
-  </main>
+  <section className="features">
+    <Opacity />
+    <ToogleTheme />
+    <Notification />
+    <Dialog />
+  </section>
 );
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

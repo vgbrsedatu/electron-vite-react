@@ -1,30 +1,35 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Manage `Features` React component.
+ * @file Manage `Dialog` React component.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// » IMPORT COMPONENTS
-import Dialog from './Dialog';
-import Notification from './Notification';
-import Opacity from './Opacity';
-import ToogleTheme from './ToogleTheme';
+// » IMPORT CUSTOM HOOKS
+import useDialog from '../../Hooks/useDialog';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Features` component.
+ * The `Dialog` component.
  *
  * @component
- * @returns {JSX.Element} The `Features` components.
+ * @returns {JSX.Element} The `Dialog` components.
  */
-const Features = () => (
-  <section className="features">
-    <Opacity />
-    <ToogleTheme />
-    <Notification />
-    <Dialog />
-  </section>
-);
+const Dialog = () => {
+  const { choice, dialog } = useDialog();
+  return (
+    <article className="feature">
+      <h3 className="feature__title">Native system dialogs</h3>
+      <div className="feature__detail">
+        <p>
+          Selection <span id="user-selection">{choice}</span>
+        </p>
+        <button type="button" className="btn btn--primary" id="dialog" onClick={dialog}>
+          Box Dialog
+        </button>
+      </div>
+    </article>
+  );
+};
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export default Features;
+export default Dialog;

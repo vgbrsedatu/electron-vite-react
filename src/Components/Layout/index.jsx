@@ -10,6 +10,8 @@ import React from 'react';
 // » IMPORT COMPONENTS
 import TitleBar from './TitleBar';
 import Router from '../../Routes/Router';
+import Footer from './Footer';
+import Header from './Header';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -21,7 +23,11 @@ import Router from '../../Routes/Router';
 const Layout = () => (
   <React.Fragment key="Layout">
     <TitleBar />
-    <Router />
+    <Header />
+    <main id="container">
+      <Router />
+    </main>
+    <Footer />
   </React.Fragment>
 );
 

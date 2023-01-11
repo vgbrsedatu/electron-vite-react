@@ -1,40 +1,35 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Manage `Footer` React component.
+ * @file Manage `Notification` React component.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT CUSTOM HOOKS
-import useAbout from '../../../Hooks/useAbout';
+import useNotification from '../../Hooks/useNotification';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Footer` component.
+ * The `Notification` component.
  *
  * @component
- * @returns {JSX.Element} The `Footer` components.
+ * @returns {JSX.Element} The `Notification` components.
  */
-const Footer = () => {
-  const about = useAbout();
+const Notification = () => {
+  const send = useNotification();
   return (
-    <footer id="footer-wrapper">
-      <ul className="footer">
-        <li className="footer__item">
-          Developed By: <span>{about?.author}</span>
-        </li>
-        <li className="footer__item">
-          Version: <span>{about?.version}</span>
-        </li>
-        <li className="footer__item">
-          Company: <span>{about?.company}</span>
-        </li>
-        <li className="footer__item">
-          Copyright: <span>{about?.copyright}</span>
-        </li>
-      </ul>
-    </footer>
+    <article className="feature">
+      <h3 className="feature__title">Notifications</h3>
+      <div className="feature__detail">
+        <p>
+          Click to create a <span>notification</span>
+        </p>
+        <button type="button" className="btn btn--primary" id="notification" onClick={send}>
+          Notification
+        </button>
+      </div>
+    </article>
   );
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export default Footer;
+export default Notification;

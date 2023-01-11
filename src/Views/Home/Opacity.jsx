@@ -1,35 +1,43 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Manage `Dialog` React component.
+ * @file Manage `Opacity` React component.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT CUSTOM HOOKS
-import useDialog from '../../../../Hooks/useDialog';
+import useOpacity from '../../Hooks/useOpacity';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Dialog` component.
+ * The `Opacity` component.
  *
  * @component
- * @returns {JSX.Element} The `Dialog` components.
+ * @returns {JSX.Element} The `Opacity` components.
  */
-const Dialog = () => {
-  const { choice, dialog } = useDialog();
+const Opacity = () => {
+  const { opacity, changeOpacity } = useOpacity();
+  const percent = opacity * 100;
   return (
     <article className="feature">
-      <h3 className="feature__title">Native system dialogs</h3>
+      <h3 className="feature__title">Change window opacity</h3>
       <div className="feature__detail">
         <p>
-          Selection <span id="user-selection">{choice}</span>
+          Current <span id="current-opacity">{percent}%</span>
         </p>
-        <button type="button" className="btn btn--primary" id="dialog" onClick={dialog}>
-          Box Dialog
-        </button>
+        <input
+          type="range"
+          id="opacity"
+          name="opacity"
+          min="0.7"
+          max="1"
+          value={`${opacity}`}
+          step="0.01"
+          onChange={e => changeOpacity(parseFloat(e.target.value))}
+        />
       </div>
     </article>
   );
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export default Dialog;
+export default Opacity;

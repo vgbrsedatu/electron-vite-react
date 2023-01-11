@@ -1,43 +1,37 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Manage `Opacity` React component.
+ * @file Manage `ToogleTheme` React component.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT CUSTOM HOOKS
-import useOpacity from '../../../../Hooks/useOpacity';
+import useTheme from '../../Hooks/useTheme';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Opacity` component.
+ * The `ToogleTheme` component.
  *
  * @component
- * @returns {JSX.Element} The `Opacity` components.
+ * @returns {JSX.Element} The `ToogleTheme` components.
  */
-const Opacity = () => {
-  const { opacity, changeOpacity } = useOpacity();
-  const percent = opacity * 100;
+const ToogleTheme = () => {
+  const { theme, toogleTheme } = useTheme();
+  const current = theme === 'dark' ? 'Dark' : 'Light';
+
   return (
     <article className="feature">
-      <h3 className="feature__title">Change window opacity</h3>
+      <h3 className="feature__title">Toogle scheme color</h3>
       <div className="feature__detail">
         <p>
-          Current <span id="current-opacity">{percent}%</span>
+          Current <span id="current-scheme">{current}</span>
         </p>
-        <input
-          type="range"
-          id="opacity"
-          name="opacity"
-          min="0.7"
-          max="1"
-          value={`${opacity}`}
-          step="0.01"
-          onChange={e => changeOpacity(parseFloat(e.target.value))}
-        />
+        <button type="button" className="btn btn--primary" id="scheme" onClick={toogleTheme}>
+          Toogle
+        </button>
       </div>
     </article>
   );
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export default Opacity;
+export default ToogleTheme;
