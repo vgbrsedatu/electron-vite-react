@@ -232,7 +232,6 @@ h6 {
   height: 100vh;
   flex: 1 1 100%;
   flex-flow: column nowrap;
-  gap: 10px;
 }
 
 #titlebar {
@@ -447,9 +446,12 @@ h6 {
 
 .features {
   display: grid;
+  width: 850px;
+  max-width: 850px;
   max-height: 300px;
   flex: 1 1 auto;
   align-content: start;
+  align-self: center;
   padding: 0 15px;
   gap: 15px;
   grid-template-columns: repeat(4, 1fr);
