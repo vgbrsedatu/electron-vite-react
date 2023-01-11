@@ -48,7 +48,7 @@ const user = {
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [auth, setUser] = useState(true);
+  const [auth, setUser] = useState(false);
 
   const signin = ({ email, password }) => {
     if (!credential.check({ email, password })) {
@@ -60,7 +60,6 @@ const AuthProvider = ({ children }) => {
 
   const signout = () => {
     setUser(null);
-    return sleep({ delay: 2000, error: false, success: true });
   };
 
   const value = useMemo(
@@ -111,6 +110,11 @@ const useSignup = () => {
   return context.signup;
 };
 
+/**
+ *
+ *
+ * @returns {() => void} Returns a function to exit the current session.
+ */
 const useSignout = () => {
   const context = useContext(AuthContext);
   if (!context) {

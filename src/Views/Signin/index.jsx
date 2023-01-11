@@ -2,6 +2,9 @@
  * @author Victor Giovanni Beltrán Rodríguez
  * @file Manage `Signin` React component view.
  */
+import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useSignin } from '../../Context/AuthContext';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -10,20 +13,64 @@
  * @component
  * @returns {JSX.Element} The `Signin` components.
  */
-const Signin = () => (
-  <section className="surface">
-    <h1 className="surface__title">Signin</h1>
-    <div className="surface__body">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros purus, semper quis
-        ipsum vitae, porta porta justo. Integer turpis elit, mollis eget erat ut, iaculis malesuada
-        velit. Vivamus semper, sem sed gravida posuere, sem eros cursus turpis, at varius eros
-        libero sit amet sem. Phasellus tincidunt luctus semper. Suspendisse potenti. Donec
-        scelerisque sagittis blandit. Sed tincidunt lorem mauris, et tempor libero cursus sit amet.
-      </p>
-    </div>
-  </section>
-);
+const Signin = () => {
+  const [email, setEmail] = useState('vibeltranr@gmail.com');
+  const [password, setPassword] = useState('dipper123');
+  const [error, setError] = useState(null);
+  const signin = useSignin();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const redirect = !location.state ? '/' : location.state.from;
+
+  const onClick = () => {
+    signin({ email, password })
+      .then(() => {
+        navigate(redirect);
+      })
+      .catch(err => {
+        setError(err.message);
+      });
+  };
+  return (
+    <section className="signin">
+      <form className="form">
+        <fieldset>
+          <legend>Signup</legend>
+          <label htmlFor="email">
+            <span>Correo:</span>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Escribe tu correo usuario"
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value);
+              }}
+            />
+          </label>
+          <label htmlFor="password">
+            <span>Contraseña:</span>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Escribe tu correo contraseña"
+              value={password}
+              onChange={e => {
+                setPassword(e.target.value);
+              }}
+            />
+          </label>
+          <button className="btn" type="button" onClick={onClick}>
+            Enviar
+          </button>
+        </fieldset>
+      </form>
+      {error && <div className="error-message">{error}</div>}
+    </section>
+  );
+};
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export default Signin;

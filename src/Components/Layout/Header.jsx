@@ -4,9 +4,26 @@
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// » IMPORT REACT MODULES
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+
 // » IMPORT CUSTOM HOOKS
 import useVersions from '../../Hooks/useVersions';
 import useAbout from '../../Hooks/useAbout';
+import useWindow from '../../Hooks/useWindow';
+
+// » IMPORT CONTEXT
+import { useSignout } from '../../Context/AuthContext';
+
+// ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const links = [
+  { id: 1, to: '/', label: 'Home' },
+  { id: 2, to: 'dashboard', label: 'Dashboard' },
+  { id: 3, to: 'products', label: 'Products' },
+  { id: 4, to: 'tasks', label: 'Tasks' },
+  { id: 5, to: 'user', label: 'User' },
+];
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -68,18 +85,63 @@ const Titles = () => {
 };
 
 /**
+ * The `Navigation` component.
+ *
+ * @component
+ * @returns {JSX.Element} The `Navigation` components.
+ */
+const Navigation = () => {
+  const { openWindow } = useWindow();
+  const signout = useSignout();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const onClick = () => {
+    signout();
+    navigate('/signin', { state: { from: pathname } });
+  };
+  return (
+    <nav className="navigation">
+      <ul className="navigation__links">
+        {links.map(element => (
+          <li key={element.id} className="navigation__link">
+            <NavLink to={element.to}>{element.label}</NavLink>
+          </li>
+        ))}
+        <li className="navigation__link">
+          <button type="button" className="btn btn--primary" onClick={() => openWindow('about')}>
+            Open window
+          </button>
+        </li>
+        <li className="navigation__link">
+          <button type="button" className="btn btn--primary" onClick={() => onClick()}>
+            Signout
+          </button>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+/**
  * The `Header` component.
  *
  * @component
+ * @param {object} props - Component properties.
+ * @param {boolean} props.onModal - If it is a normal or modal window.
  * @returns {JSX.Element} The `Header` components.
  */
-const Header = () => (
+const Header = ({ onModal }) => (
   <header id="header-wrapper">
     <Versions />
     <Figure />
     <Titles />
+    {!onModal && <Navigation />}
   </header>
 );
+
+Header.propTypes = {
+  onModal: PropTypes.bool.isRequired,
+};
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export default Header;
