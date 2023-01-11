@@ -247,7 +247,9 @@ h6 {
 }
 
 #header-wrapper {
+  display: flex;
   flex: 0 1 auto;
+  flex-flow: column;
 }
 
 #main-wrapper {
@@ -526,15 +528,19 @@ h6 {
 
 .navigation {
   display: flex;
-  width: 820px;
+  align-self: center;
+  margin: 15px auto;
+}
+
+.navigation__links {
+  display: flex;
+  width: 810px;
   flex-flow: row nowrap;
-  align-content: center;
   align-items: baseline;
   align-self: center;
   justify-content: space-around;
   padding: 5px;
   border-radius: 15px;
-  margin: 10;
   background: var(--color-surface-variant);
   color: var(--color-on-surface-variant);
 }

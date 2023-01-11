@@ -9,7 +9,7 @@ import path from 'path';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * Collection of application icon paths file
+ * Collection of application icon paths file.
  *
  * @typedef  {object} Icons
  * @property {string} app         - Application icon paths file.
@@ -24,7 +24,7 @@ import path from 'path';
 /**
  * Path segments for assets directory.
  *
- * @type  {Object.<string, Array.<string>>}
+ * @type  {object.<string, Array.<string>>}
  * @private
  */
 const PATH_ASSETS = [__dirname, '..', '..', 'assets'];
@@ -67,7 +67,7 @@ const ICON_ABOUT = path.join.apply(null, PATH_ICONS.ABOUT);
 /**
  * Icon file path reference for the information success.
  *
- * NOTE: The file is of type `.ico`
+ * NOTE: The file is of type `.ico`.
  *
  * @type {string} ICON_SUCCESS
  * @private
