@@ -14,9 +14,10 @@ import { useEffect, useState } from 'react';
  * @typedef {Object} WindowResponse
  * @property {boolean} maximize - If the window state is maximized, Default value is `false`.
  * @property {boolean} fullScreen - If the window state is fullscreened, Default value is `false`.
- * @property {function():void} closeWindow - A function that sends a signal to ipcMain to close the window.
- * @property {function():void} minimizeWindow - A function that sends a signal to ipcMain to minimize the window.
- * @property {function():void} maximizeWindow - A function that sends a signal to ipcMain to maximize the window.
+ * @property {() => void} closeWindow - A function that sends a signal to ipcMain to close the window.
+ * @property {() => void} minimizeWindow - A function that sends a signal to ipcMain to minimize the window.
+ * @property {() => void} maximizeWindow - A function that sends a signal to ipcMain to maximize the window.
+ * @property {(view:string) => void} openWindow - A function that sends a signal to ipcMain to open a Window.
  */
 
 // ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -34,9 +35,9 @@ const useWindow = () => {
     const handler = (event, payload) => {
       setMaximize(payload);
     };
-    window.appRuntime.subscribe('window-maximize:reply', handler);
+    window.appRuntime.subscribe('window-maximize', handler);
     return () => {
-      window.appRuntime.remove('window-maximize:reply', handler);
+      window.appRuntime.removeAll('window-maximize');
     };
   }, []);
 
@@ -44,9 +45,9 @@ const useWindow = () => {
     const handler = (event, payload) => {
       setFullScreen(payload);
     };
-    window.appRuntime.subscribe('window-fullscreen:reply', handler);
+    window.appRuntime.subscribe('window-fullscreen', handler);
     return () => {
-      window.appRuntime.remove('window-fullscreen:reply', handler);
+      window.appRuntime.removeAll('window-fullscreen');
     };
   }, []);
 
@@ -62,7 +63,11 @@ const useWindow = () => {
     window.appRuntime.send('window-maximize');
   };
 
-  return { maximize, fullScreen, closeWindow, minimizeWindow, maximizeWindow };
+  const openWindow = view => {
+    window.appRuntime.send('window-open', view);
+  };
+
+  return { maximize, fullScreen, closeWindow, minimizeWindow, maximizeWindow, openWindow };
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
