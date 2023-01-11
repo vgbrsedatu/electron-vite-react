@@ -11,7 +11,10 @@ import { Routes, Route } from 'react-router-dom';
 // » IMPORT APP COMPONENT
 import Protected from './Protected';
 import About from '../Views/About';
-import Dasboard from '../Views/Dasboard';
+import Dashboard from '../Views/Dashboard';
+import Products from '../Views/Products';
+import Tasks from '../Views/Tasks';
+import User from '../Views/User';
 import Home from '../Views/Home';
 import Signin from '../Views/Signin';
 
@@ -21,9 +24,9 @@ const HomeProtected = () => (
   </Protected>
 );
 
-const DasboardProtected = () => (
+const DashboardProtected = () => (
   <Protected>
-    <Dasboard />
+    <Dashboard />
   </Protected>
 );
 
@@ -39,7 +42,10 @@ const Router = () => (
     <Routes>
       <Route path="/" element={<HomeProtected />} />
       <Route path="about" element={<About />} />
-      <Route path="dasboard" element={<DasboardProtected />} />
+      <Route path="dashboard" element={<DashboardProtected />} />
+      <Route path="products" element={<Products />} />
+      <Route path="tasks" element={<Tasks />} />
+      <Route path="user" element={<User />} />
       <Route path="signin" element={<Signin />} />
     </Routes>
   </Fragment>

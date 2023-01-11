@@ -12,6 +12,7 @@ import TitleBar from './TitleBar';
 import Router from '../../Routes/Router';
 import Footer from './Footer';
 import Header from './Header';
+import Navigation from './navigation';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -26,6 +27,7 @@ const Layout = () => (
     <Header />
     <main id="container">
       <Router />
+      <Navigation />
     </main>
     <Footer />
   </React.Fragment>
