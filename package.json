@@ -1,6 +1,6 @@
 {
   "name": "electron-vite-react",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A minimal starter template for electron application with vite and react",
   "productName": "Electron Vite",
   "keywords": [
