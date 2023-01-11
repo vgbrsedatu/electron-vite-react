@@ -242,6 +242,8 @@ h6 {
   display: flex;
   flex: 1 1 auto;
   flex-flow: column nowrap;
+  align-self: center;
+  gap: 15px;
 }
 
 #header-wrapper {
@@ -366,11 +368,37 @@ h6 {
 }
 
 .surface {
+  display: flex;
+  width: 820px;
+  height: 235px;
+  flex-flow: column nowrap;
+  align-self: center;
   padding: 15px;
   border-radius: 15px;
-  margin: 20px;
   background-color: var(--color-surface-variant);
   color: var(--color-on-surface-variant);
+  overflow-y: auto;
+}
+
+/* width */
+.surface::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+.surface::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+/* Handle */
+.surface::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: var(--color-primary);
+}
+
+/* Handle on hover */
+.surface::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tertiary);
 }
 
 .version {
@@ -446,11 +474,10 @@ h6 {
 
 .features {
   display: grid;
-  width: 850px;
+  width: 820px;
   flex: 0 1 auto;
   align-content: start;
   align-self: center;
-  padding: 0 15px;
   gap: 15px;
   grid-template-columns: repeat(4, 1fr);
   overflow-y: auto;
@@ -495,6 +522,21 @@ h6 {
   flex-flow: column;
   justify-content: space-around;
   gap: 5px;
+}
+
+.navigation {
+  display: flex;
+  width: 820px;
+  flex-flow: row nowrap;
+  align-content: center;
+  align-items: baseline;
+  align-self: center;
+  justify-content: space-around;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 10;
+  background: var(--color-surface-variant);
+  color: var(--color-on-surface-variant);
 }
 
 .footer {
@@ -554,8 +596,8 @@ input[type="range"]::-webkit-slider-thumb {
   height: 20px;
   border-radius: 50%;
   appearance: none;
-  background: #C2F5FF;
-  box-shadow: 0 0 2px 0 #555555;
+  background: var(--color-primary);
+  box-shadow: 0 0 2px 0 var(--color-primary);
   cursor: ew-resize;
   transition: background 0.3s ease-in-out;
 }
