@@ -5,9 +5,7 @@
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT COMPONENTS
-import Figure from './Figure';
-import Header from './Header';
-import Section from './Section';
+import Features from './Features';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -18,9 +16,7 @@ import Section from './Section';
  */
 const Main = () => (
   <main id="main-wrapper">
-    <Figure />
-    <Header />
-    <Section />
+    <Features />
   </main>
 );
 

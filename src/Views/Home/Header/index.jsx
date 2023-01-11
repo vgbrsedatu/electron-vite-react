@@ -6,6 +6,8 @@
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » IMPORT COMPONENTS
 import Versions from './Versions';
+import Figure from './Figure';
+import Titles from './Titles';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -19,6 +21,8 @@ const Header = () => (
     <nav>
       <Versions />
     </nav>
+    <Figure />
+    <Titles />
   </header>
 );
 

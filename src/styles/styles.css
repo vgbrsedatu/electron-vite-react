@@ -447,9 +447,7 @@ h6 {
 .features {
   display: grid;
   width: 850px;
-  max-width: 850px;
-  max-height: 300px;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   align-content: start;
   align-self: center;
   padding: 0 15px;

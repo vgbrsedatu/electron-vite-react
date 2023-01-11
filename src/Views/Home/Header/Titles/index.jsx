@@ -1,30 +1,29 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Manage `Section` React component.
+ * @file Manage `Titles` React component.
  */
-
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// » IMPORT COMPONENTS
-import Dialog from './Dialog';
-import Notification from './Notification';
-import Opacity from './Opacity';
-import ToogleTheme from './ToogleTheme';
+// » IMPORT CUSTOM HOOKS
+import useAbout from '../../../../Hooks/useAbout';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Section` component.
+ * The `Titles` component.
  *
  * @component
- * @returns {JSX.Element} The `Section` components.
+ * @returns {JSX.Element} The `Titles` components.
  */
-const Section = () => (
-  <section className="features">
-    <Opacity />
-    <ToogleTheme />
-    <Notification />
-    <Dialog />
-  </section>
-);
+const Titles = () => {
+  const about = useAbout();
+  return (
+    <header className="title-app">
+      <h2 className="title-app__presentation">AN APPLICATION WITH ELECTRON AND REACT</h2>
+      <h4 id="app-description" className="title-app__description">
+        {about?.description}
+      </h4>
+    </header>
+  );
+};
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-export default Section;
+export default Titles;
