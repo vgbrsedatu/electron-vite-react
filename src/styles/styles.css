@@ -393,12 +393,12 @@ h6 {
 /* Handle */
 .surface::-webkit-scrollbar-thumb {
   border-radius: 15px;
-  background: var(--color-primary);
+  background: var(--color-tertiary);
 }
 
 /* Handle on hover */
 .surface::-webkit-scrollbar-thumb:hover {
-  background: var(--color-tertiary);
+  background: var(--color-primary);
 }
 
 .version {
