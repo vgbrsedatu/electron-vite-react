@@ -27,7 +27,7 @@ import useStorage from './useStorage';
 
 // ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `useOpacity` it's a custom React hook witch communicates with the
+ * The `useOpacity` it's a custom React hook, communicates with the
  * `electron.ipcMain` module, used to manage opacity state.
  *
  * @returns {opacityHook} An object to opacity state manage.
