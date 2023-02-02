@@ -12,7 +12,7 @@ import os from 'os';
 // » IMPORT THIRD PARTIES MODULES
 
 // » IMPORT ELECTRON APIS
-import { app, BrowserWindow, ipcMain, nativeTheme, autoUpdater } from 'electron';
+import { app, BrowserWindow, ipcMain, nativeTheme, autoUpdater, systemPreferences } from 'electron';
 
 // » IMPORT ASSETS
 import * as assets from '../assets';
@@ -410,11 +410,13 @@ ipcMain.on('window-open', (event, view) => {
  * @type {ipcMain} - Electron API
  * @listens ipcMain#notification
  */
-ipcMain.on('notification', (event, payload) => {
+ipcMain.on('notification', () => {
+  const color = systemPreferences.getAccentColor();
   const notification = system.notification({
-    ...payload,
-    urgency: payload.urgency || 0,
-    icon: icons[payload.icon] || icons.app,
+    title: 'The current accent color is:',
+    body: `#${color.toLocaleUpperCase()}`,
+    urgency: 0,
+    icon: icons.app,
   });
   notification.show();
 });
