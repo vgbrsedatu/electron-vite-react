@@ -1,6 +1,6 @@
 /**
  * @author Victor Giovanni Beltrán Rodríguez
- * @file Contains `useOpacity` a custom React Hook.
+ * @file Contains `useOpacity` custom React Hook.
  */
 
 // ━━ IMPORT MODULES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -12,19 +12,25 @@ import useStorage from './useStorage';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The returns value from `useOpacity`
+ * A function to change `opacity` value.
  *
- * @typedef   {object}    OpacityResponse
- * @property  {string}    opacity         - The `opacity` value.
- * @property  {(value:string) => void}  changeOpacity   - A function to change `opacity` state.
+ * @typedef   {(value:string) => void} changeOpacity
+ */
+
+/**
+ * The returns value from `useOpacity` Hook
+ *
+ * @typedef   {object}        opacityHook
+ * @property  {string}        opacity         - The current `opacity` value.
+ * @property  {changeOpacity} changeOpacity   - A function to change `opacity` value.
  */
 
 // ━━ CUSTOM REACT HOOK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `useOpacity` it's a custom React hook witch communicates with the
- * `electron` api, used to manages opacity state.
+ * `electron.ipcMain` module, used to manage opacity state.
  *
- * @returns {OpacityResponse} An object to manage the opacity state.
+ * @returns {opacityHook} An object to opacity state manage.
  */
 const useOpacity = () => {
   const [opacity, setOpacity] = useStorage('opacity', 1);
