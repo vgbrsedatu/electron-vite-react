@@ -18,7 +18,7 @@ import useStorage from './useStorage';
  */
 
 /**
- * The returns value from `useOpacity` Hook
+ * The returns value from `useOpacity` Hook.
  *
  * @typedef   {object}        opacityHook
  * @property  {string}        opacity         - The current `opacity` value.
