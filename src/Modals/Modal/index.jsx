@@ -17,7 +17,7 @@ import usePortal from '../../Hooks/usePortal';
 /**
  * A component to create `Portal` React
  *
- * @returns {ReactPortal}
+ * @returns {React.ReactPortal}
  * @example
  * ```js
  *  <Portal id="modal">
