@@ -63,8 +63,8 @@ const api = {
   sendSync: (channel, payload) => ipcRenderer.sendSync(channel, payload),
   invoke: (channel, listener) => ipcRenderer.invoke(channel, listener),
   subscribe: (channel, listener) => ipcRenderer.on(channel, listener),
-  remove: (channel, listener) => ipcRenderer.removeListener(channel, listener),
   subscribeOnce: (channel, listener) => ipcRenderer.once(channel, listener),
+  remove: (channel, listener) => ipcRenderer.removeListener(channel, listener),
   removeAll: channel => ipcRenderer.removeAllListeners(channel),
   once: (channel, listener) => {
     const subscription = (event, ...args) => listener(...args);
