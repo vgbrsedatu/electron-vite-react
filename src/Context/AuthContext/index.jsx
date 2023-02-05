@@ -48,7 +48,7 @@ const user = {
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
-  const [auth, setUser] = useState(false);
+  const [auth, setUser] = useState(true);
 
   const signin = ({ email, password }) => {
     if (!credential.check({ email, password })) {
