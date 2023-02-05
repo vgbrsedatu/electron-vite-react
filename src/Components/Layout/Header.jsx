@@ -8,13 +8,16 @@
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
+// » IMPORT CONTEXT
+import { useSignout } from '../../Context/AuthContext';
+
+// » IMPORT CUSTOM HOOKS
+import useModal from '../../Hooks/useModal';
+
 // » IMPORT CUSTOM HOOKS
 import useVersions from '../../Hooks/useVersions';
 import useAbout from '../../Hooks/useAbout';
 import useWindow from '../../Hooks/useWindow';
-
-// » IMPORT CONTEXT
-import { useSignout } from '../../Context/AuthContext';
 
 // ━━ CONSTANTS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 const links = [
@@ -88,10 +91,12 @@ const Titles = () => {
  * The `Navigation` component.
  *
  * @component
+ * @param {object} props - Component properties.
+ * @param {boolean} props.openModal - Function to display a modal window.
  * @returns {JSX.Element} The `Navigation` components.
  */
-const Navigation = () => {
-  const { openWindow } = useWindow();
+const Navigation = ({ openModal }) => {
+  const { controls } = useWindow();
   const signout = useSignout();
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -108,7 +113,16 @@ const Navigation = () => {
           </li>
         ))}
         <li className="navigation__link">
-          <button type="button" className="btn btn--primary" onClick={() => openWindow('about')}>
+          <button type="button" className="btn btn--primary" onClick={openModal}>
+            Open modal
+          </button>
+        </li>
+        <li className="navigation__link">
+          <button
+            type="button"
+            className="btn btn--primary"
+            onClick={() => controls.openWindow('about')}
+          >
             Open window
           </button>
         </li>
@@ -122,6 +136,10 @@ const Navigation = () => {
   );
 };
 
+Navigation.propTypes = {
+  openModal: PropTypes.func.isRequired,
+};
+
 /**
  * The `Header` component.
  *
@@ -130,14 +148,28 @@ const Navigation = () => {
  * @param {boolean} props.onModal - If it is a normal or modal window.
  * @returns {JSX.Element} The `Header` components.
  */
-const Header = ({ onModal }) => (
-  <header id="header-wrapper">
-    <Versions />
-    <Figure />
-    <Titles />
-    {!onModal && <Navigation />}
-  </header>
-);
+const Header = ({ onModal }) => {
+  const { isOpen, toggle, closeModal, Modal } = useModal();
+  return (
+    <header id="header-wrapper">
+      <Versions />
+      <Figure />
+      <Titles />
+      {!onModal && <Navigation openModal={toggle} />}
+      <Modal
+        id="popup"
+        title="Modal"
+        isOpen={isOpen}
+        closeModal={closeModal}
+        position={{ top: '50%', left: '50%' }}
+      >
+        <div>
+          <h1>Hi</h1>
+        </div>
+      </Modal>
+    </header>
+  );
+};
 
 Header.propTypes = {
   onModal: PropTypes.bool.isRequired,
