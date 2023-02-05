@@ -9,9 +9,9 @@ import { useEffect, useState } from 'react';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The returns value from `useAbout`
+ * The returns from `useAbout` Hook.
  *
- * @typedef   {object}  AboutResponse
+ * @typedef   {object}  aboutHook
  * @property  {string}  name          - Application name.
  * @property  {string}  description   - Application description.
  * @property  {string}  team          - The team that developed the application.
@@ -26,7 +26,7 @@ import { useEffect, useState } from 'react';
  * The `useAbout` it's a custom React hook witch communicates with the
  * `electron` api, used to manages about state.
  *
- * @returns {AboutResponse} Information about the application.
+ * @returns {aboutHook} Information about the application.
  */
 const useAbout = () => {
   const [about, setAbout] = useState({});
