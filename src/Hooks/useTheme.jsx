@@ -8,7 +8,7 @@
 import { useEffect } from 'react';
 
 // » IMPORT CUSTOM HOOKS
-import useStorage from './useStorage';
+import useLocalStorage from './useLocalStorage';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -28,7 +28,7 @@ import useStorage from './useStorage';
  * @returns {ThemeResponse} Information about the versions application.
  */
 const useTheme = () => {
-  const [theme, setTheme] = useStorage('theme', null);
+  const [theme, setTheme] = useLocalStorage('theme', null);
 
   useEffect(() => {
     const current = window.appRuntime.sendSync('theme:current');
