@@ -286,6 +286,7 @@ h6 {
 
 .titlebar {
   display: flex;
+  height: 35px;
   flex: 0 1 auto;
   flex-flow: row nowrap;
   align-items: flex-start;
@@ -300,8 +301,16 @@ h6 {
   -webkit-app-region: no-drag;
 }
 
+.titlebar.titlebar--modal {
+  height: 25px;
+  -webkit-app-region: no-drag;
+  font-size: 0.8em;
+}
+
 .titlebar__app-name {
   display: flex;
+  height: 100%;
+  flex: 1 1 auto;
   flex-flow: row nowrap;
   align-items: center;
   gap: 10px;
@@ -309,27 +318,27 @@ h6 {
 
 .titlebar__app-name > span {
   display: flex;
-  width: 46px;
-  height: 32px;
+  width: 2.8125em;
+  height: 100%;
   flex-flow: row;
   align-items: center;
   justify-content: center;
   border: none;
   -webkit-app-region: drag;
   font-family: var(--font-segoe-mdl2);
-  font-size: 16px;
 }
 
 .titlebar__windows-control {
   display: flex;
+  height: 100%;
   flex-flow: row nowrap;
   gap: 2px;
 }
 
 .titlebar__button {
   display: flex;
-  width: 46px;
-  height: 32px;
+  width: 2.8125em;
+  height: 100%;
   flex-flow: row;
   align-items: center;
   justify-content: center;
@@ -340,7 +349,6 @@ h6 {
   color: inherit;
   cursor: pointer;
   font-family: var(--font-segoe-mdl2);
-  font-size: 16px;
   user-select: none;
 }
 
