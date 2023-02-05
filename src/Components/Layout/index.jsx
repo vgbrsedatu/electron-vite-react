@@ -19,29 +19,6 @@ import Main from './Main';
 
 // ━━ COMPONENT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The `Modal` component.
- *
- * @component
- * @param {object} props - Component properties.
- * @param {string} props.title - The title of current window.
- * @param {boolean} props.onModal - If it is a normal or modal window.
- * @returns {JSX.Element} The `Layout` components.
- */
-const Modal = ({ onModal, title }) => (
-  <React.Fragment key="Layout">
-    <TitleBar title={title} onModal={onModal} />
-    <Header onModal={onModal} />
-    <Main />
-    <Footer />
-  </React.Fragment>
-);
-
-Modal.propTypes = {
-  title: PropTypes.string.isRequired,
-  onModal: PropTypes.bool.isRequired,
-};
-
-/**
  * The `Signin` component.
  *
  * @component
@@ -50,38 +27,15 @@ Modal.propTypes = {
  * @param {boolean} props.onModal - If it is a normal or modal window.
  * @returns {JSX.Element} The `Layout` components.
  */
-const Signin = ({ onModal, title }) => (
+const Signin = ({ title }) => (
   <React.Fragment key="Layout">
-    <TitleBar title={title} onModal={onModal} />
+    <TitleBar title={title} buttons="001" />
     <Main />
   </React.Fragment>
 );
 
 Signin.propTypes = {
   title: PropTypes.string.isRequired,
-  onModal: PropTypes.bool.isRequired,
-};
-
-/**
- * The `General` component.
- *
- * @component
- * @param {object} props - Component properties.
- * @param {boolean} props.onModal - If it is a normal or modal window.
- * @returns {JSX.Element} The `Layout` components.
- */
-const General = ({ onModal, title }) => (
-  <React.Fragment key="Layout">
-    <TitleBar title={title} onModal={onModal} />
-    <Header onModal={onModal} />
-    <Main />
-    <Footer />
-  </React.Fragment>
-);
-
-General.propTypes = {
-  title: PropTypes.string.isRequired,
-  onModal: PropTypes.bool.isRequired,
 };
 
 /**
@@ -107,14 +61,17 @@ const Layout = () => {
   const onSignin = path === 'signin';
 
   if (onSignin) {
-    return <Signin onModal={onModal} title={title} />;
+    return <Signin title={title} />;
   }
 
-  if (onModal) {
-    return <Modal onModal={onModal} title={title} />;
-  }
-
-  return <General onModal={onModal} title={title} />;
+  return (
+    <React.Fragment key="Layout">
+      <TitleBar title={title} buttons={onModal ? '001' : '111'} />
+      <Header onModal={onModal} />
+      <Main />
+      <Footer />
+    </React.Fragment>
+  );
 };
 
 // ━━ EXPORT MODULE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
