@@ -8,7 +8,7 @@
 import { useEffect } from 'react';
 
 // » IMPORT CUSTOM HOOKS
-import useStorage from './useStorage';
+import useLocalStorage from './useLocalStorage';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
@@ -33,7 +33,7 @@ import useStorage from './useStorage';
  * @returns {opacityHook} An object to opacity state manage.
  */
 const useOpacity = () => {
-  const [opacity, setOpacity] = useStorage('opacity', 1);
+  const [opacity, setOpacity] = useLocalStorage('opacity', 1);
 
   useEffect(() => {
     window.appRuntime.send('opacity', opacity);
