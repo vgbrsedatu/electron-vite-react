@@ -9,9 +9,9 @@ import { useState } from 'react';
 
 // ━━ TYPE DEFINITIONS ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * The returns value from `useDialog`
+ * The returns from `useDialog`.
  *
- * @typedef   {object}      DialogResponse
+ * @typedef   {object}      dialogHook
  * @property  {string}      choice         - The value chosen by the user.
  * @property  {() => void}  dialog         - A function to open a modal window.
  */
@@ -42,7 +42,7 @@ const options = {
  * The `useDialog` it's a custom React hook witch communicates with the
  * `electron` api.
  *
- * @returns {DialogResponse} An object to interact with a modal window.
+ * @returns {dialogHook} An object to interact with a modal window.
  */
 const useDialog = () => {
   const [choice, setChoice] = useState('');
